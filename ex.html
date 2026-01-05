@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Practice Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .input-text,
+        .input-number,
+        .input-date,
+        .select-box,
+        .textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-btn,
+        .checkbox-skill,
+        .checkbox-terms {
+            margin-right: 6px;
+        }
+
+        .btn-submit,
+        .btn-reset {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-reset {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 id="form-title" class="title">User Registration Form</h2>
+
+<form id="userForm" class="form-container" onsubmit="return validateForm()">
+
+    <!-- Text -->
+    <label for="fullname" class="label">Full Name</label>
+    <input type="text" id="fullname" class="input-text" name="fullname" placeholder="Enter full name">
+
+    <!-- Email -->
+    <label for="email" class="label">Email</label>
+    <input type="email" id="email" class="input-text" name="email" placeholder="Enter email">
+
+    <!-- Password -->
+    <label for="password" class="label">Password</label>
+    <input type="password" id="password" class="input-text" name="password">
+
+    <!-- Number -->
+    <label for="age" class="label">Age</label>
+    <input type="number" id="age" class="input-number" name="age" min="18" max="60">
+
+    <!-- Date -->
+    <label for="dob" class="label">Date of Birth</label>
+    <input type="date" id="dob" class="input-date" name="dob">
+
+    <!-- Dropdown -->
+    <label for="country" class="label">Country</label>
+    <select id="country" class="select-box" name="country">
+        <option value="">--Select Country--</option>
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+    </select>
+
+    <!-- Radio -->
+    <label class="label">Gender</label><br>
+    <input type="radio" id="male" class="radio-btn" name="gender" value="male">
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" class="radio-btn" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Multiple Checkbox -->
+    <label class="label">Skills</label><br>
+    <input type="checkbox" id="java" class="checkbox-skill" name="skills" value="java">
+    <label for="java">Java</label><br>
+
+    <input type="checkbox" id="python" class="checkbox-skill" name="skills" value="python">
+    <label for="python">Python</label><br>
+
+    <input type="checkbox" id="testing" class="checkbox-skill" name="skills" value="testing">
+    <label for="testing">Testing</label><br><br>
+
+    <!-- Textarea -->
+    <label for="about" class="label">About You</label>
+    <textarea id="about" class="textarea" name="about" rows="3"></textarea>
+
+    <!-- Terms -->
+    <input type="checkbox" id="terms" class="checkbox-terms" name="terms">
+    <label for="terms">I agree to terms & conditions</label><br><br>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+        <input type="submit" id="submitBtn" class="btn-submit" value="Submit">
+        <input type="reset" id="resetBtn" class="btn-reset" value="Reset">
+    </div>
+
+</form>
+
+<script>
+    function validateForm() {
+        if (document.getElementById("fullname").value === "") {
+            alert("Full Name is required");
+            return false;
+        }
+        if (!document.getElementById("terms").checked) {
+            alert("Please accept terms and conditions");
+            return false;
+        }
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
