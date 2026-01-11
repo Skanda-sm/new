@@ -1,163 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Advanced Practice Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shashikumar L B | Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f6ff;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .form-container {
-            width: 400px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        .title {
-            text-align: center;
-            color: #333;
-        }
+    body {
+      background: #050816;
+      color: #ccd6f6;
+      line-height: 1.6;
+    }
 
-        .label {
-            font-weight: bold;
-        }
+    a {
+      color: #64ffda;
+      text-decoration: none;
+    }
 
-        .input-text,
-        .input-number,
-        .input-date,
-        .select-box,
-        .textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+    /* ---------- Header ---------- */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        .radio-btn,
-        .checkbox-skill,
-        .checkbox-terms {
-            margin-right: 6px;
-        }
+    header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+    }
 
-        .btn-submit,
-        .btn-reset {
-            width: 48%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    header h1 span {
+      color: #64ffda;
+    }
 
-        .btn-submit {
-            background-color: #4CAF50;
-            color: white;
-        }
+    header h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 15px 0;
+      color: #8892b0;
+    }
 
-        .btn-reset {
-            background-color: #f44336;
-            color: white;
-        }
+    header p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 0.95rem;
+    }
 
-        .btn-group {
-            display: flex;
-            justify-content: space-between;
-        }
-    </style>
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid #64ffda;
+      border-radius: 6px;
+      color: #64ffda;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #ffffff;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      width: 80px;
+      height: 2px;
+      background: #64ffda;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    /* ---------- About ---------- */
+    .about p {
+      max-width: 800px;
+      color: #8892b0;
+    }
+
+    /* ---------- Education ---------- */
+    .edu-item {
+      margin-bottom: 20px;
+    }
+
+    .edu-item strong {
+      color: #64ffda;
+    }
+
+    /* ---------- Skills ---------- */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .skill-box {
+      background: #0b0f2a;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-5px);
+      background: #112240;
+    }
+
+    /* ---------- Projects ---------- */
+    .project {
+      background: #0b0f2a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      color: #64ffda;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.85rem;
+      color: #8892b0;
+      border-top: 1px solid #112240;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header h2 { font-size: 1.1rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<h2 id="form-title" class="title">User Registration Form</h2>
+<!-- HERO -->
+<header>
+  <div>
+    <h1>Hi, I'm <span>Shashikumar L B</span></h1>
+    <h2>Finance & Logistics Graduate</h2>
+    <p>
+      Enthusiastic MBA graduate with strong fundamentals in financial analysis,
+      accounting operations, and supply chain management. Actively seeking an
+      entry-level opportunity in finance and operations.
+    </p>
+    <a class="btn" href="mailto:shashibyalyal@gmail.com">Contact Me</a>
+  </div>
+</header>
 
-<form id="userForm" class="form-container" onsubmit="return validateForm()">
+<!-- ABOUT -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Finance and Logistics graduate with hands-on academic exposure to
+    accounting, GST entries, financial statements, and supply chain operations.
+    I enjoy working with numbers, data, and reports, and I am eager to learn and
+    grow in a professional finance environment.
+  </p>
+</section>
 
-    <!-- Text -->
-    <label for="fullname" class="label">Full Name</label>
-    <input type="text" id="fullname" class="input-text" name="fullname" placeholder="Enter full name">
+<!-- EDUCATION -->
+<section>
+  <h2>Education</h2>
+  <div class="edu-item"><strong>MBA</strong> – Dhanwantari Academy for Management Studies (2023–2025) | CGPA: 7.15</div>
+  <div class="edu-item"><strong>B.Com</strong> – Basaweshwara Commerce College, Bagalkot (2020–2023) | 76.35%</div>
+  <div class="edu-item"><strong>PUC</strong> – GVVS PU College, Nidagundi (2018–2020) | 69.67%</div>
+  <div class="edu-item"><strong>SSLC</strong> – MHM High School, Almatti DS (2017–2018) | 76.08%</div>
+</section>
 
-    <!-- Email -->
-    <label for="email" class="label">Email</label>
-    <input type="email" id="email" class="input-text" name="email" placeholder="Enter email">
+<!-- SKILLS -->
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill-box">Tally ERP 9</div>
+    <div class="skill-box">GST Entries</div>
+    <div class="skill-box">Ledger & Accounts</div>
+    <div class="skill-box">Advanced Excel</div>
+    <div class="skill-box">Power BI</div>
+    <div class="skill-box">Financial Analysis</div>
+    <div class="skill-box">Ratio Analysis</div>
+    <div class="skill-box">Supply Chain Basics</div>
+    <div class="skill-box">Digital Marketing</div>
+  </div>
+</section>
 
-    <!-- Password -->
-    <label for="password" class="label">Password</label>
-    <input type="password" id="password" class="input-text" name="password">
+<!-- PROJECTS -->
+<section>
+  <h2>Projects</h2>
 
-    <!-- Number -->
-    <label for="age" class="label">Age</label>
-    <input type="number" id="age" class="input-number" name="age" min="18" max="60">
+  <div class="project">
+    <h3>Supply Chain Management Study</h3>
+    <p>
+      An academic project conducted at EID Parry Ltd., Bagalkot, analyzing
+      procurement, inventory flow, and logistics efficiency.
+    </p>
+  </div>
 
-    <!-- Date -->
-    <label for="dob" class="label">Date of Birth</label>
-    <input type="date" id="dob" class="input-date" name="dob">
+  <div class="project">
+    <h3>Transportation Efficiency & Customer Satisfaction</h3>
+    <p>
+      Studied the impact of transportation efficiency on delivery timelines and
+      customer satisfaction at EID Parry Ltd.
+    </p>
+  </div>
+</section>
 
-    <!-- Dropdown -->
-    <label for="country" class="label">Country</label>
-    <select id="country" class="select-box" name="country">
-        <option value="">--Select Country--</option>
-        <option value="india">India</option>
-        <option value="usa">USA</option>
-        <option value="uk">UK</option>
-    </select>
-
-    <!-- Radio -->
-    <label class="label">Gender</label><br>
-    <input type="radio" id="male" class="radio-btn" name="gender" value="male">
-    <label for="male">Male</label>
-
-    <input type="radio" id="female" class="radio-btn" name="gender" value="female">
-    <label for="female">Female</label><br><br>
-
-    <!-- Multiple Checkbox -->
-    <label class="label">Skills</label><br>
-    <input type="checkbox" id="java" class="checkbox-skill" name="skills" value="java">
-    <label for="java">Java</label><br>
-
-    <input type="checkbox" id="python" class="checkbox-skill" name="skills" value="python">
-    <label for="python">Python</label><br>
-
-    <input type="checkbox" id="testing" class="checkbox-skill" name="skills" value="testing">
-    <label for="testing">Testing</label><br><br>
-
-    <!-- Textarea -->
-    <label for="about" class="label">About You</label>
-    <textarea id="about" class="textarea" name="about" rows="3"></textarea>
-
-    <!-- Terms -->
-    <input type="checkbox" id="terms" class="checkbox-terms" name="terms">
-    <label for="terms">I agree to terms & conditions</label><br><br>
-
-    <!-- Buttons -->
-    <div class="btn-group">
-        <input type="submit" id="submitBtn" class="btn-submit" value="Submit">
-        <input type="reset" id="resetBtn" class="btn-reset" value="Reset">
-    </div>
-
-</form>
-
-<script>
-    function validateForm() {
-        if (document.getElementById("fullname").value === "") {
-            alert("Full Name is required");
-            return false;
-        }
-        if (!document.getElementById("terms").checked) {
-            alert("Please accept terms and conditions");
-            return false;
-        }
-        alert("Form submitted successfully!");
-        return true;
-    }
-</script>
+<!-- FOOTER -->
+<footer>
+  © 2026 Shashikumar L B | Finance & Operations Portfolio
+</footer>
 
 </body>
 </html>
